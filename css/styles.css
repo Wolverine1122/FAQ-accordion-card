@@ -1,0 +1,230 @@
+html {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 12px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 25px;
+  color: hsl(238, 29%, 16%);
+}
+
+body {
+  margin: 0;
+}
+
+.mainBody {
+  height: 100vh;
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  display: grid;
+  place-items: center;
+  grid-template-rows: 1fr 70px;
+  grid-template-areas: "canvas"
+                       "attribution";
+}
+
+.canvas {
+  grid-area: canvas;
+  width: 750px;
+  height: 380px;
+  margin: auto;
+  border-radius: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "illustrations   content";
+}
+
+hr {
+  color: hsl(240, 5%, 91%);
+}
+
+.illustrations-column {
+  grid-area: illustrations;
+  background-image: url(../images/illustration-woman-online-desktop.svg), url(../images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: -80px 30px , -350px -180px;
+  background-size: 400px auto , 666px auto;
+  position: relative;
+}
+
+.content-column {
+  grid-area: content;
+  padding: 60px 40px 60px 10px;
+  overflow: auto;
+}
+
+.top-img {
+  content: url(../images/illustration-box-desktop.svg);
+  position: absolute;
+  top: 150px;
+  left: -85px;
+  width: 40%;
+}
+
+.attribution {
+  grid-area: attribution;
+  color: white;
+  text-align: center;
+  height: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .canvas {
+    width: 700px;
+    height: 350px;
+  }
+
+  .top-img {
+    top: 155px;
+    left: -75px;
+  }
+
+  .content-column {
+    padding: 60px 40px 30px 10px;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .canvas {
+    width: 600px;
+    height: 350px;
+  }
+
+  .top-img {
+    top: 160px;
+    left: -65px;
+  }
+
+  .content-column {
+    padding: 50px 30px 20px 10px;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .mainBody {
+    grid-template-rows: 150px 1fr 50px ;
+    grid-template-areas: "."
+                        "canvas"
+                         "attribution";
+  }
+  .canvas {
+    grid-area: canvas;
+    margin: auto;
+    width: 600px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 1fr;
+    grid-template-areas: "illustrations" 
+                          "content";
+  }
+  .illustrations-column {
+    grid-area: illustrations;
+    background-image: url(../images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 260px auto;
+    position: relative;
+  }
+  .top-img {
+    content: url(../images/illustration-woman-online-mobile.svg);
+    position: absolute;
+    top: -120px;
+    left: 135px;
+    width: 50%;
+  }
+  
+  .content-column {
+    grid-area: content;
+    padding: 0 60px 60px;
+    overflow: auto;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .canvas {
+    width: 500px;
+  }
+  .illustrations-column {
+    background-size: 230px auto;
+  }
+  .top-img {
+    top: -100px;
+    left: 110px;
+  }
+}
+
+@media screen and  (max-width: 540px) {
+  .mainBody {
+    grid-template-rows: 150px 1fr 50px ;
+  }
+  .illustrations-column {
+    background-size: 170px auto;
+  }
+  .canvas {
+    width: 400px;
+  }
+  .top-img {
+    top: -80px;
+    left: 90px;
+  }
+}
+
+@media screen and  (max-width: 420px) {
+  .mainBody {
+    grid-template-rows: 120px 1fr 50px ;
+  }
+  .canvas {
+    width: 300px;
+    grid-template-rows: 100px 1fr;
+  }
+  .top-img {
+    top: -70px;
+    left: 50px;
+    width: 60%;
+  }
+}
+
+.accordion {
+  cursor: pointer;
+  padding: 5px 0;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  background-color: white;
+  border: 0;
+  font-size: 14px;
+  color: hsl(240, 6%, 50%);
+}
+
+.active {
+  color: hsl(237, 12%, 33%);
+  font-weight: bolder;
+}
+
+.accordion:hover {
+  color: hsl(14, 88%, 65%);
+}
+
+.panel {
+  display: none;
+  overflow: hidden;
+  color: hsl(240, 6%, 50%);
+}
+
+.accordion:after {
+  content: url(../images/icon-arrow-down.svg);
+  color: hsl(14, 88%, 65%);
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: url(../images/icon-arrow-down.svg);
+  transform: rotate(180deg);
+}
