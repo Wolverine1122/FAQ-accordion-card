@@ -23,8 +23,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/Wolverine1122/FAQ-accordion-card](https://github.com/Wolverine1122/FAQ-accordion-card)
+- Live Site URL: [https://projects-faqaccordion.netlify.app/](https://projects-faqaccordion.netlify.app/)
 
 ### Built with
 
